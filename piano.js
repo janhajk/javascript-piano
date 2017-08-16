@@ -29,7 +29,7 @@
       this.div.style.width = (this.sharp?width/2:width) + 'px';
       this.div.style.height = this.sharp?'70px':'100px';
       this.div.style.position = 'absolute';
-      this.div.style.left = (left + (this.sharp?15:0)) + 'px';
+      this.div.style.left = (left + (this.sharp?-15:0)) + 'px';
       if (this.sharp) this.div.className = 'sharp';
       this.div.style.top = yPos + 'px';
       this.div.style.border = '1px solid black';
