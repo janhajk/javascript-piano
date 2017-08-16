@@ -22,7 +22,7 @@
    };
 
    var Key = function(key, xPos, yPos) {
-      left += !this.sharp?width:0;
+      left += this.sharp?0:width;
       this.key = key;
       this.tKey = getNameFromKey(key);
       this.sharp = this.tKey.search('♯')===1?1:0;
@@ -30,7 +30,7 @@
       this.div.style.width = (this.sharp?width/2:width) + 'px';
       this.div.style.height = this.sharp?'70px':'100px';
       this.div.style.position = 'absolute';
-      this.div.style.left = (left + this.sharp?width/2:0) + 'px';
+      this.div.style.left = (left + (this.sharp?width*3/2:0)) + 'px';
       this.div.style.top = yPos + 'px';
       this.div.style.border = '1px solid black';
       this.div.innerHTML = this.tKey;
