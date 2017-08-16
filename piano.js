@@ -2,7 +2,7 @@
    const tones = ['G♯', 'A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
    const maxTunes = 6;
 
-   var left = 0;
+   var left = 50;
 
    var tunes = [];
    for (let i = 0; i < maxTunes; i++) {
