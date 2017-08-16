@@ -22,7 +22,7 @@
    };
 
    var Key = function(key, xPos, yPos) {
-      left += xPos/(key+1);
+      left += width;
       this.key = key;
       this.tKey = getNameFromKey(key);
       this.sharp = this.tKey.search('♯')===1?1:0;
