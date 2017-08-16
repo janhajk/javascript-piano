@@ -14,7 +14,7 @@
    };
 
    var getHertzFromKey = function(key) {
-      var A = 440; // Hz
+      var A = 55; // Hz
       return Math.pow(Math.pow(2, 1/12),key) * A;
    };
 
