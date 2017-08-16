@@ -27,7 +27,7 @@
       this.tKey = getNameFromKey(key);
       this.sharp = this.tKey.search('♯')===1?1:0;
       this.div = document.createElement('div');
-      this.div.style.width = (sharp?width/2:width) + 'px';
+      this.div.style.width = (this.sharp?width/2:width) + 'px';
       this.div.style.height = this.sharp?'70px':'100px';
       this.div.style.position = 'absolute';
       left -= this.sharp?width:0;
