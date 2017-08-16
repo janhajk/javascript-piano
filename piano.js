@@ -10,6 +10,7 @@
 
    var getNameFromKey = function(key) {
       var index = (key-(Math.floor(key / 13)*13))-1;
+      index = index < 0 ? 0 : index;
       return tones[index];
    };
 
