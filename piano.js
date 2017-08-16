@@ -30,7 +30,7 @@
       this.div.style.width = width + 'px';
       this.div.style.height = this.sharp?'70px':'100px';
       this.div.style.position = 'absolute';
-      left += (!this.sharp?-width/2:0);
+      left -= this.sharp?width/2:0;
       this.div.style.left = left + 'px';
       this.div.style.top = yPos + 'px';
       this.div.style.border = '1px solid black';
