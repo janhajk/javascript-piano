@@ -1,5 +1,5 @@
 (function() {
-   const tones = ['G♯', 'A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
+   const tones = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
    const maxTunes = 6;
 
    var left = 50;
@@ -18,7 +18,7 @@
 
    var getHertzFromKey = function(key) {
       var A = 55; // Hz
-      return Math.pow(Math.pow(2, 1/12),key-1) * A;
+      return Math.pow(Math.pow(2, 1/12),key) * A;
    };
 
    var Key = function(key, xPos, yPos) {
