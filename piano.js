@@ -2,6 +2,8 @@
    const tones = ['G♯', 'A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
    const maxTunes = 6;
 
+   var left = 0;
+
    var tunes = [];
    for (let i = 0; i < maxTunes; i++) {
       tunes.push(new AudioContext());
@@ -19,6 +21,7 @@
    };
 
    var Key = function(key, xPos, yPos) {
+      left = left + xPos;
       this.key = key;
       this.tKey = getNameFromKey(key);
       this.sharp = this.tKey.search('♯')===1?1:0;
@@ -26,7 +29,8 @@
       this.div.style.width = '20px';
       this.div.style.height = this.sharp?'70px':'100px';
       this.div.style.position = 'absolute';
-      this.div.style.left = (this.sharp?xPos-10:xPos) + 'px';
+      left += (this.sharp?xPos-10:xPos);
+      this.div.style.left = left + 'px';
       this.div.style.top = yPos + 'px';
       this.div.style.border = '1px solid black';
       this.div.innerHTML = this.tKey;
