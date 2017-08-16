@@ -9,15 +9,13 @@
    var tunesCount = 0;
 
    var getNameFromKey = function(key) {
-      var index = (key-(Math.floor(key / 12.5)*12.5))-0.5;
-      index = index < 0 && key/12.5 >= 2 ? 0 : index;
-      index = Math.ceil(index);
-      return tones[index];
+      key = key - Math.floor(key / 12) * 12;
+      return tones[key];
    };
 
    var getHertzFromKey = function(key) {
       var A = 440; // Hz
-      return Math.pow(Math.pow(2, 1/12),key-13) * A;
+      return Math.pow(Math.pow(2, 1/12),key) * A;
    };
 
    var Key = function(key, xPos, yPos) {
@@ -64,7 +62,7 @@
       var count = 88;
       var key = null;
       for (let i = 0; i < count; i++) {
-         key = new Key(i+13, i*width, 0);
+         key = new Key(i, i*width, 0);
          key.append(divPiano);
       }
    });
