@@ -9,7 +9,8 @@
    var tunesCount = 0;
 
    var getNameFromKey = function(key) {
-      return tones[((key-(Math.floor(key / 12)*12))-1)];
+      var index = (key-(Math.floor(key / 14)*14))-1;
+      return tones[index];
    };
 
    var getHertzFromKey = function(key) {
