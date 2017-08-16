@@ -35,27 +35,24 @@
       this.bg = ['white', 'black'][this.sharp];
       this.div.style.backgroundColor = this.bg;
       this.oscillator = null;
-      this.div.onmousedown = this.mouseDown;
-      this.div.onmouseup = this.mouseUp;
+      var self = this;
+      this.div.onmousedown = function() {
+         tunesCount++;
+         var c = tunes[tunesCount-1];
+         self.oscillator = c.createOscillator();
+         self.oscillator.type = "sine";
+         self.oscillator.frequency.value = getHertzFromKey(self.key);
+         self.oscillator.connect(c.destination);
+         self.oscillator.start();
+      };
+      this.div.onmouseup = function() {
+         self.oscillator.stop();
+         tunesCount--;
+      };
    };
 
    Key.prototype.append = function(parent) {
       parent.appendChild(this.div);
-   };
-
-   Key.prototype.mouseDown = function() {
-      tunesCount++;
-      var c = tunes[tunesCount-1];
-      this.oscillator = c.createOscillator();
-      this.oscillator.type = "sine";
-      this.oscillator.frequency.value = getHertzFromKey(this.key);
-      this.oscillator.connect(c.destination);
-      this.oscillator.start();
-   };
-
-   Key.prototype.mouseUp = function() {
-      this.oscillator.stop();
-      tunesCount--;
    };
 
    document.addEventListener('DOMContentLoaded', function() {
