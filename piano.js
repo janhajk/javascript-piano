@@ -22,7 +22,6 @@
    };
 
    var Key = function(key, xPos, yPos) {
-      left += this.sharp?0:width;
       this.key = key;
       this.tKey = getNameFromKey(key);
       this.sharp = this.tKey.search('♯')===1?1:0;
@@ -52,6 +51,7 @@
          self.oscillator.stop();
          tunesCount--;
       };
+      left += this.sharp?0:width;
    };
 
    Key.prototype.append = function(parent) {
