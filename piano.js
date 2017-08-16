@@ -11,6 +11,7 @@
    var getNameFromKey = function(key) {
       var index = (key-(Math.floor(key / 12.5)*12.5))-0.5;
       index = index < 0 && key/12.5 >= 2 ? 0 : index;
+      index = ceil(index);
       return tones[index];
    };
 
