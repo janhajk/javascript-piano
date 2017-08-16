@@ -48,13 +48,13 @@
       var c = tunes[tunesCount-1];
       this.oscillator = c.createOscillator();
       this.oscillator.type = "sine";
-      this.oscillator.frequency.value = getHertzFromKey(key);
+      this.oscillator.frequency.value = getHertzFromKey(this.key);
       this.oscillator.connect(c.destination);
       this.oscillator.start();
    };
 
    Key.prototype.mouseUp = function() {
-      this.o.stop();
+      this.oscillator.stop();
       tunesCount--;
    };
 
