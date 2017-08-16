@@ -18,7 +18,7 @@
 
    var getHertzFromKey = function(key) {
       var A = 55; // Hz
-      return Math.pow(Math.pow(2, 1/12),key+1) * A;
+      return Math.pow(Math.pow(2, 1/12),key-1) * A;
    };
 
    var Key = function(key, xPos, yPos) {
