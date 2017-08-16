@@ -9,7 +9,7 @@
    var tunesCount = 0;
 
    var getNameFromKey = function(key) {
-      var index = (key-(Math.floor(key / 13)*13))-1;
+      var index = (key-(Math.floor(key / 13)*13))-(key/13 >= 2?0:1);
       index = index < 0 && key/13 >= 2 ? 0 : index;
       return tones[index];
    };
