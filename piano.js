@@ -3,6 +3,7 @@
    const maxTunes = 6;
 
    var left = 50;
+   var width = 20;
 
    var tunes = [];
    for (let i = 0; i < maxTunes; i++) {
@@ -21,15 +22,15 @@
    };
 
    var Key = function(key, xPos, yPos) {
-      left = left + xPos;
+      left += xPos;
       this.key = key;
       this.tKey = getNameFromKey(key);
       this.sharp = this.tKey.search('♯')===1?1:0;
       this.div = document.createElement('div');
-      this.div.style.width = '20px';
+      this.div.style.width = width + 'px';
       this.div.style.height = this.sharp?'70px':'100px';
       this.div.style.position = 'absolute';
-      left += (this.sharp?xPos-10:xPos);
+      left += (this.sharp?-width/2:0);
       this.div.style.left = left + 'px';
       this.div.style.top = yPos + 'px';
       this.div.style.border = '1px solid black';
@@ -62,7 +63,6 @@
       var body = document.body;
       body.appendChild(divPiano);
 
-      var width = 20;
       var count = 88;
       var key = null;
       for (let i = 0; i < count; i++) {
