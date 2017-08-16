@@ -63,7 +63,7 @@
       body.appendChild(divPiano);
 
       var width = 20;
-      var count = 20;
+      var count = 88;
       var key = null;
       for (let i = 0; i < count; i++) {
          key = new Key(i+14, i*width, 0);
